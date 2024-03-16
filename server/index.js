@@ -26,7 +26,13 @@ const StartServer = async () => {
             getTodos: [Todo]
            }
         `,
-    
+    resolvers: {
+      Query: {
+        getTodos: async () =>
+          (await axios.get("https://jsonplaceholder.typicode.com/todos")).data,
+        getAllUsers: async () =>
+          (await axios.get("https://jsonplaceholder.typicode.com/users")).data,
+      },
     },
   });
 
