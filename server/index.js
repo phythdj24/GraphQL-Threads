@@ -20,6 +20,7 @@ const StartServer = async () => {
            type Todo {
             id: ID!
             title: String!
+            Task: String!
             completed: Boolean
            }
            type Query {
